@@ -68,6 +68,7 @@ decorated_fn = datefixer(dateconf)(fn) # same issue!! we break the function name
 ------------------------------------------------------------------
 
 ### Python's 🐍 Syntactic Sugar
+
 ```python
 # following are equivalent!
 decorated_fn = datefixer(dateconf)(fn) 
