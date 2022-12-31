@@ -1,2 +1,23 @@
 # Customizing Prepare
--  [ ] Show using overloaded functions customizing the __prepare__ method
+
+```python
+class C:
+	a : int = 10 
+	def __init__(self, *args, **kwargs):
+		self.b = kwargs.get('b', None)
+	
+	def baz(self, ):
+		return baz
+
+```
+
+`type(classname, bases, namespace)`
+
+```python
+type(
+	'C',
+	(object, ),
+	{
+		'__init__': 
+	}
+)

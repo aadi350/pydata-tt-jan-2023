@@ -1,27 +1,38 @@
 # Objects
 
 ## How Types Work
+Everything is an object (including classes)
 ```python
 class Base: pass
 
 b = Base()
-print(type(b))
-# <class '__main__.Base'>
+type(b)
 
-print(type(Base))
-# <class 'type'>
+type(Base) # type(some_object) returns class of object
+
+type(type(Base))
 
 ```
 
-## Creating Classes
+## Class Definition
+What really happens in class creation?
+```python 
+class SomeClass:
+	classvar = 1
+	def __init__(self, ):
+		self.somevar = 'Some value'
+
+SomeClass.__dict__
+
+```
+
+`type`
 ```python
 class A: 
 	a = 1
 	b = 'hello'
 	def f(self, ):
 		return self.a
-
-print('hello')
 
 # OR
 def make_A():
@@ -51,13 +62,7 @@ A = make_A()
 a = A()
 ```
 
-When a class definition is executed, the following steps occur:  
-- MRO entries are resolved;  
-- the appropriate metaclass is determined;  
-- the class namespace is prepared;  
-- the class body is executed;  
-- the class object is created.  
+`type` creates a class! By using a custom metaclass (instead of type), we can inject behaviour to classes that would not have been possible
 
-A namespace is a collection of currently defined symbolic names along with information about the object that each name references. You can think of a namespace as a dictionary in which the keys are the object names and the values are the objects themselves
-
-The point of this example is to show that the Python runtime is rich, and we can potentially hook into background processes
+Main takeaway:
+`type` is the metaclass that creates classes
