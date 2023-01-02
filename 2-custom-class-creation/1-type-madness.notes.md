@@ -20,3 +20,6 @@ The metaclass is then called with the name, bases, and attributes of the class t
 And because type is the default metaclass in Python, you can use type to create classes in Python.
 
 type, when called with one argument, produces the type information of an existing class. type called with three arguments creates a new class object. The arguments, when invoking type, are the name of the class, a list of base classes, and a dictionary giving the namespace for the class (all the fields and methods).
+
+Why does this syntax exist? let's say we have three classes (A, B, C), and (for some reason), we need compositions of all three (AB, BC, AC), Python is dynamic, so we could theoretically do this (example using itertools), show bases, etc
+	"Matrices" of classes

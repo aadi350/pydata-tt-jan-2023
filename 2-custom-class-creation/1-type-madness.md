@@ -66,3 +66,23 @@ a = A()
 
 Main takeaway:
 `type` is the metaclass that creates classes
+
+## Why does this syntax exist?
+```python
+import itertools
+
+class A:
+	pass
+
+class B:
+	pass
+
+class C:
+	pass
+
+for parents in itertools.combinations([A, B, C], 2):
+	classname = ''.join([c.__name__ for c in parents])
+	globals()[classname] = type(classname, parents, {})
+
+	pass
+```
