@@ -44,6 +44,7 @@ def make_A():
 
 
     namespace = type.__prepare__(name, bases)
+
     body = (
 '''
 a = 1

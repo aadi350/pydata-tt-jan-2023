@@ -8,18 +8,26 @@ def foo(a):
 
 # the function to do the returning 
 def baz(f):
-	print('from baz')
+	print(f.__name__)
 	return f 
 
-baz_ret = baz(foo) 
-print(baz_ret(2))
+foo(4)
 
+foo = baz(foo) 
+
+foo(2)
+
+# syntactic sugar, PEP318
+@baz
+def foo(a):
+	return a**2
 ```
 
 ## Why is this useful
 
 Decorator's ONLY job is to call and return the output of f
-We can modify the input to functions here
+
+General syntax of low-order decorator:
 ```python
 def decorator(f):
     def wrapper(*args, **kwargs):

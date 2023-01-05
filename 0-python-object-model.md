@@ -1,3 +1,4 @@
+This example uses tmux and showing the output interactively in a vertical split
 Start with example adding integers and strings
 
 
@@ -5,7 +6,7 @@ Some class, need to do some mathematical operation
 Start with blank class, creating polynomials, with coefficients
 
 Want to be able to do simple operations (show from) :
-```python3
+```python
 class Complex: pass
 
 c = Complex()
@@ -32,7 +33,7 @@ x() -> __call__
 size of complex (len), using sqrt(a^2 + b^2)
 
 Python data model implement protocols with some abstract meaning, whatever makes sense in that context, in each case we have some protocol, some top-level function (or syntax +, len(), etc) and a corresponding underscore
-
+Everything in Python is an object
 
 Three views of OOP in python:
 1. Protocol views

@@ -23,3 +23,10 @@ type, when called with one argument, produces the type information of an existin
 
 Why does this syntax exist? let's say we have three classes (A, B, C), and (for some reason), we need compositions of all three (AB, BC, AC), Python is dynamic, so we could theoretically do this (example using itertools), show bases, etc
 	"Matrices" of classes
+
+
+This is for dynamic class creation
+Allows to create and manipulate classes that can't be done with the standard toolset
+
+type is a metaclass that creates classes
+a metaclass is to a class, what a class is to an instance

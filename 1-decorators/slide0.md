@@ -1,8 +1,6 @@
 # Decorators
 
 In order to set some context, we need to look at python functions 
-Explain def , function name, args, kwargs, and output
-
 ```python
 # anatomy of a function
 def foo(*args, **kwargs):
@@ -24,5 +22,8 @@ def return_object():
 	return a
 print(return_object())
 ```
-
+Python has first-class functions:
+- You can assign functions to variables
+- Pass functions as arguments to other functions (like you do with variables)
+- A function can be returned by other function
 
