@@ -1,6 +1,9 @@
 # Metaclasses
+These are notes, use the python file to demonstrate 
 
 Metaclasses are a callable that returns a class
+type(classname, bases, namespace) returns a class
+
 Classes "create" instances, metaclasses create classes, python is dynamic
 
 A metaclass is a "class" of a "class", class is an instance of a metaclass

@@ -1,6 +1,6 @@
 # PEP 487
 
-Replaces everything a metaclass can do (except for one thing)
+Replaces everything a metaclass can do (except for protocol enforcement)
 
 ```python
 class Parent:

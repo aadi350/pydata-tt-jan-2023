@@ -37,6 +37,7 @@ class InitMeta(type):
         return super(InitMeta, cls).__new__(cls, name, bases, attributes)
 
 
+# this just works!
 class A(metaclass=InitMeta):
     def __init__(self, a, b):
 
