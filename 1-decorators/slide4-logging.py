@@ -1,7 +1,3 @@
-# TODO: turn this into notes
-
-# let's say we need to add logging to a set of libraries
-
 class BaseLogger:
     def send_usage_data(self, *args, **kwargs):
         pass
