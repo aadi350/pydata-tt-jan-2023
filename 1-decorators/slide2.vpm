@@ -1,0 +1,18 @@
+def get_result(*args, **kwargs):
+	return 0
+
+# some already-written function
+def some_expensive_fn(*args, **kwargs):
+
+	cache = {}
+	# if function has seen input before
+	if args in cache:
+		result = cache[args]
+		return result
+
+	# do computations here ONLY if args don't exist in cache 
+	result = get_result(*args, **kwargs) 
+
+	return result
+
+

@@ -1,0 +1,38 @@
+def get_result(*args, **kwargs):
+	return 0
+
+# some already-written function
+def some_expensive_fn(*args, **kwargs):
+
+	cache = {}
+	# if function has seen input before
+	if args in cache:
+		result = cache[args]
+		return result
+
+	# do computations here ONLY if args don't exist in cache 
+	result = get_result(*args, **kwargs) 
+
+	return result
+
+def cache(func):
+    # Create a cache to store the results of previous function calls
+    cache = {}
+    
+    def wrapper(*args, **kwargs):
+        # Check if the function has been called with these arguments before
+        if args in cache:
+            # If it has, return the cached result
+            return cache[args]
+        else:
+            # If it hasn't, call the function and store the result in the cache
+            result = func(*args, **kwargs)
+            cache[args] = result
+            return result
+    
+    return wrapper
+
+# we pass our original function into cache()
+cached_fn = cache(some_expensive_fn)
+
+

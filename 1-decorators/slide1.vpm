@@ -1,0 +1,19 @@
+# some function foo
+def foo(a):
+    return a**2
+
+# add some functionality to foo()
+def print_name(f):
+	print(f.__name__) # print the name
+	return f 
+
+foo(4) # 16
+
+# foo = print_name(foo)
+
+foo(2)
+
+# syntactic sugar!
+@print_name
+def foo(a):
+    return a**2
