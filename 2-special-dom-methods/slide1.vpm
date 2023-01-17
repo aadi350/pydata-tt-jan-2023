@@ -1,0 +1,16 @@
+# PEP 487 – Simpler customisation of class creation
+class Parent:
+    def __init__(self, *args, **kwargs) -> None:
+        print('Parent __init__')
+
+    def __new__(cls, *args, **kwargs):
+        print('Parent __new__')
+        return super().__new__(cls, *args, **kwargs)
+
+    def __init_subclass__(cls):
+        print('__init_subclass__')
+
+class Child(Parent):
+    def __init__(self, *args, **kwargs):
+        print('Child __init__')
+        super().__init__(*args, **kwargs)

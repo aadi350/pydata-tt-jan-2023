@@ -1,0 +1,23 @@
+class Model:
+    def __init_subclass__(cls, **kwargs):
+        super().__init_subclass__(**kwargs)
+        
+        # Create a custom "predict" method for each subclass based on the input data type
+        def predict(self, data):
+            if isinstance(data, pd.DataFrame):
+                return self._predict_df(data)
+            elif isinstance(data, pd.Series):
+                return self._predict_series(data)
+
+        cls.predict = predict
+
+class CustomModel(Model):
+    def _predict_df(self, data):
+        # Implement prediction logic for DataFrames here
+        pass
+    
+    def _predict_series(self, data):
+        # Implement prediction logic for Series here
+        pass
+
+

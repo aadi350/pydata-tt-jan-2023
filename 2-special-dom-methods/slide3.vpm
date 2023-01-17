@@ -1,0 +1,25 @@
+class Transformer:
+    subclasses = {}
+    required_methods = ['transform', 'fit']
+
+
+    def __init_subclass__(cls, **kwargs) -> None:
+        super().__init_subclass__(**kwargs)
+        cls.subclasses[cls.__name__] = cls
+
+        for method in Transformer.required_methods:
+            if not hasattr(cls, method):
+                raise NotImplementedError(
+                        f'Subclass of Transformer must implement the {method} method')
+
+class GoodTransformer(Transformer):
+    def transform(self, ):
+        pass
+
+    def fit(self, ):
+        pass
+    
+class BadTransformer(Transformer):
+    pass
+
+# essentially what abc.ABC now does

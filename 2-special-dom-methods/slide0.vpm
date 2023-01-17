@@ -1,0 +1,9 @@
+class BaseClass:
+    def __new__(cls, *args, **kwargs):
+        print('__new__')
+        return object().__new__(BaseClass, **kwargs)
+
+    def __init__(self, *args, **kwargs):
+        print('__init__')
+        pass
+
