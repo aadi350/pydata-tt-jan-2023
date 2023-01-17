@@ -1,0 +1,38 @@
+# syntactic sugar!
+def make_A_short():
+    class A: 
+        a = 1
+        b = 'hello'
+        def f(self, ):
+            return 117
+
+    return A
+
+# (roughly) what happens
+def make_A():
+    name = 'A'
+    bases = ()
+
+    a = 1
+    b = 'hello'
+
+
+    namespace = type.__prepare__(name, bases)
+
+    body = (
+'''
+a = 1
+b = 'hello'
+
+def f(self,):
+    return 117
+'''
+    )
+    exec(body, globals(), namespace)
+    
+    # type creates the class
+    A = type(name, bases, namespace)
+    return A
+
+A = make_A()
+a = A()

@@ -1,16 +1,3 @@
-# InitMeta.py
-
-# this is annoying
-class A:
-    def __init__(self, a, b, c, d, e, f, g):
-        self.a = a
-        self.b = b
-        self.c = c
-        self.d = d
-        self.e = e
-        self.f = f
-        self.g = g
-
 # Metaclasses to the rescue!
 class InitMeta(type):
     import inspect
@@ -40,5 +27,5 @@ class InitMeta(type):
 # this just works!
 class A(metaclass=InitMeta):
     def __init__(self, a, b):
-
-        print(self.a)
+        pass
+ 

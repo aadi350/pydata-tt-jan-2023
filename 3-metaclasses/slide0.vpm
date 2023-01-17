@@ -1,0 +1,9 @@
+class BaseClass:
+	pass
+
+class Derived(BaseClass):
+	pass
+
+b = BaseClass()
+d = Derived()
+
