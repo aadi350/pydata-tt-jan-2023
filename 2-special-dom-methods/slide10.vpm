@@ -1,0 +1,25 @@
+# Customize __new__ NOT __init__:
+
+class Index:
+    def __new__(cls, values):
+        if type(values[0]) in (datetime, datetime64):
+            cls = DatetimeIndex
+        else:
+            cls = DefaultIndex
+        return object.__new__(cls) # THIS is where the instance is created
+
+class DefaultIndex(Index, Generic[S]):
+    def __init__(self, values: List[S]):
+        self.values = values
+
+    def first(self):
+        return self.values[0]
+
+index, dt_index = DefaultIndex(normal_index_data), DefaultIndex(datetime_index_data)
+
+# It detected the typye of data input
+type(index), type(dt_index)
+
+'''(__main__.DefaultIndex, pandas.core.indexes.datetimes.DatetimeIndex)'''
+
+

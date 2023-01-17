@@ -1,0 +1,28 @@
+## The Factory Pattern
+import numpy as np
+import pandas as pd
+
+
+# normal index
+normal_index_data = np.linspace(1, 5, 5)
+index = pd.Index(normal_index_data)
+
+print(type(index)) # It automatically created the Float64Index
+# pandas.core.indexes.numeric.Float64Index
+
+
+# with datetimes
+datetime_index_data = [
+		np.datetime64('2022-12-01'), 
+		np.datetime64('2023-01-01'),
+		np.datetime64('2023-02-01') 
+]
+
+index = pd.Index(datetime_index_data)
+type(index) # It detected that the datatype was of datetime64 and adjusted accordingly
+# pandas.core.indexes.datetimes.DatetimeIndex
+
+# How do we determine the `type` at runtime?
+
+
+

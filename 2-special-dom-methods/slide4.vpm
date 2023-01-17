@@ -1,27 +1,6 @@
 import pandas as pd
 
 # We want to handle two types of data
-
-class Model:
-    def __init_subclass__(cls, **kwargs):
-        super().__init_subclass__(**kwargs)
-        
-        # Create a custom "predict" method for each subclass based on the input data type
-        def predict(self, data):
-            if isinstance(data, pd.DataFrame):
-                return self._predict_df(data)
-            elif isinstance(data, pd.Series):
-                return self._predict_series(data)
-
-        cls.predict = predict
-        
-        # Ensure that the subclass implements the required methods
-        required_methods = ["_predict_df", "_predict_series"]
-
-        for method in required_methods:
-            if not hasattr(cls, method):
-                raise NotImplementedError(f"Subclass of Model must implement the '{method}' method.")
-
 class CustomModel(Model):
     def _predict_df(self, data):
         # Implement prediction logic for DataFrames here
