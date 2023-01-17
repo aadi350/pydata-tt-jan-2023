@@ -1,0 +1,4 @@
+repr() -> __repr__
+add(self, other) -> __add__
+sub(self, other) -> __sub__
+mul(self, other) -> __mul__

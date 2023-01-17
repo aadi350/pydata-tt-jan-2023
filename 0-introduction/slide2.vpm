@@ -1,0 +1,9 @@
+class ComplexNumber:
+    def __init__(self, real, imaginary):
+        self.real = real
+        self.imaginary = imaginary
+
+c1 = ComplexNumber(real=2, imaginary=3)
+c2 = ComplexNumber(real=-1, imaginary=4)
+
+c1 + c2

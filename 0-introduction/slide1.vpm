@@ -1,0 +1,12 @@
+class ComplexNumber:
+    pass
+
+c1 = ComplexNumber()
+c2 = ComplexNumber()
+
+c1.real = 2
+c1.imaginary = 3
+
+c1.real = -1 
+c1.imaginary = 4
+

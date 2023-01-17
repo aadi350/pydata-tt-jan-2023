@@ -1,0 +1,17 @@
+class ComplexNumber:
+    def __init__(self, real, imaginary):
+        self.real = real
+        self.imaginary = imaginary
+
+    def __add__(self, other):
+        return ComplexNumber(
+            real=self.real+other.real, 
+            imaginary=self.imaginary+other.imaginary)
+
+c1 = ComplexNumber(real=2, imaginary=3)
+c2 = ComplexNumber(real=-1, imaginary=4)
+
+c1 + c2
+
+# need something when repr() is called
+repr(c1)
