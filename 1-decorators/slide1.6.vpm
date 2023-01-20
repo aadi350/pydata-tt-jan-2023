@@ -1,0 +1,20 @@
+from functools import wraps
+
+def decorator(conf):
+
+    def _wrapper(f):
+
+        @wraps(f)
+        def _wrapped(*args, **kwargs):
+            print(conf)
+            return f(*args, **kwargs)
+
+        return _wrapped
+
+    return _wrapper
+
+@decorator({'a': 1})
+def foo(*args, **kwargs):
+    print('foo')
+
+

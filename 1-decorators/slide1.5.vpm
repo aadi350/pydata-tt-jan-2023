@@ -1,0 +1,14 @@
+def decorator(f):
+    def wrapper(*args, **kwargs):
+        print('within decorator')
+        result = f(*args, **kwargs)
+
+        return result
+
+    return wrapper
+
+def foo(*args, **kwargs):
+    print('foo')
+    return 0
+
+
