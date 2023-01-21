@@ -7,3 +7,4 @@ class BaseClass:
         print('__init__')
         pass
 
+

@@ -1,19 +1,27 @@
 import inspect
+class Baz:
+    # type hints
+    def foo(a:int, b:str, c:dict): 
+        pass
+
 
 class EnforceTypeHints:
     def __init_subclass__(cls) -> None:
+        # search for all methods
         method_list = inspect.getmembers(cls, predicate=inspect.isfunction) # gets all functions in class
         for func_name, func in method_list: 
             for arg_name, parameter in list(inspect.signature(func).parameters.items())[1:]:
+                # if not there, raise an error
                 t = parameter.annotation
                 if t == inspect._empty: raise ValueError(f'Argument {arg_name} needs a type annotation')
+
 
 class TypeHinted(EnforceTypeHints):
     def __init__(self, a:int) -> None:
         super().__init__()
 
 class BadClass(EnforceTypeHints):
-	def __init__(self, a: int):
+	def __init__(self, a):
 		pass
 
 

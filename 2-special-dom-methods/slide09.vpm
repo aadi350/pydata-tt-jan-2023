@@ -1,9 +1,11 @@
-from numpy import datetime, datetime64
+from numpy import datetime64
+from datetime import datetime
 
 class DefaultIndex(list): pass
 class DatetimeIndex(list): pass
 
 
+# What NOT to do!!!
 class DynamicIndex:
 	def __init__(self, values):
 		if type(values[0]) in (datetime, datetime64):
@@ -14,3 +16,4 @@ class DynamicIndex:
 		return self
 
 badindex = DynamicIndex([1, 2, 3])
+
